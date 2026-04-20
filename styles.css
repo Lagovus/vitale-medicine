@@ -313,6 +313,28 @@ nav.scrolled .logo img {
     margin-top: 1rem;
     color: var(--text-light);
     font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+}
+
+.team-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.team-cta i {
+    font-size: 0.75rem;
+}
+
+.team-cta:hover {
+    color: var(--accent);
+    transform: translateX(5px);
 }
 
 /* --- Gallery --- */
