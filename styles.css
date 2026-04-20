@@ -131,6 +131,34 @@ nav.scrolled .logo img {
     color: var(--primary);
 }
 
+.lang-switch {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-left: 1px solid rgba(0,0,0,0.1);
+    padding-left: 1.5rem;
+}
+
+.lang-switch a {
+    color: var(--text-dark) !important;
+    opacity: 0.4;
+    transition: var(--transition);
+}
+
+.lang-switch a.active {
+    color: var(--primary) !important;
+    opacity: 1;
+}
+
+.lang-switch a:hover {
+    opacity: 1;
+    color: var(--primary) !important;
+}
+
 .nav-cta {
     background: var(--primary);
     color: white;
