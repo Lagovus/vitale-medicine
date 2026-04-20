@@ -131,11 +131,16 @@ nav.scrolled .logo img {
     color: var(--primary);
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
 .lang-switch {
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--text-light);
-    margin-left: 1rem;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -507,6 +512,8 @@ footer {
 
 @media (max-width: 768px) {
     .nav-links, .nav-cta { display: none; }
+    .nav-actions { gap: 1rem; }
+    .lang-switch { border-left: none; padding-left: 0; }
     .hero h1 { font-size: 2.5rem; }
     .gallery-grid { grid-template-columns: 1fr 1fr; }
     .item-wide { grid-column: span 1; }
