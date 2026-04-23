@@ -504,6 +504,182 @@ footer {
     transform: translateY(0);
 }
 
+/* --- Nursing Section --- */
+.nursing-section {
+    margin-top: 4rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding-top: 4rem;
+}
+
+/* --- Reviews Section --- */
+.reviews {
+    background-color: var(--bg-light);
+}
+
+.reviews-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.reviews-title-area {
+    max-width: 500px;
+}
+
+.reviews-tagline {
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.reviews-title-area h2 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    color: var(--text-dark);
+}
+
+.reviews-title-area h2 span {
+    color: var(--primary);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.gmn-score-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.gmn-score-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.gmn-logo {
+    width: 40px;
+    height: 40px;
+    background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.gmn-logo-inner {
+    background: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4285f4;
+    font-family: sans-serif;
+}
+
+.gmn-score-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.gmn-score-number {
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.2rem;
+}
+
+.gmn-stars {
+    color: #fbbc05;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.gmn-text {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.review-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: var(--transition);
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.review-stars {
+    color: #c5a059;
+    margin-bottom: 1rem;
+}
+
+.review-text {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(93, 181, 164, 0.15);
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.author-info h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.1rem;
+}
+
+.author-info span {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
 /* Responsive */
 @media (max-width: 992px) {
     .hero h1 { font-size: 3rem; }
