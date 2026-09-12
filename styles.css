@@ -486,8 +486,10 @@ footer {
 }
 
 .footer-brand img {
-    height: 80px;
-    margin-bottom: 1.5rem;
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto 1.5rem;
     background: white;
     padding: 15px;
     border-radius: 15px;
