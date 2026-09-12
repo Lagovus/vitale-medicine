@@ -19,16 +19,18 @@
 </head>
 <body>
 
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/595985858524?text=Olá,%20tenho%20uma%20dúvida." class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/595985858524?text=Olá,%20tenho%20uma%20dúvida." class="whatsapp-float" target="_blank" aria-label="Consultar pelo WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
     <!-- Navigation -->
-    <nav id="main-nav">
+    <nav id="main-nav" aria-label="Navegação principal">
         <div class="container">
-            <a href="#" class="logo">
-                <img src="vitale/logo_final.png" alt="Vitale Medicine Logo">
+            <a href="#" class="logo" aria-label="Vitale Medicine - Início">
+                <img src="vitale/logo_final.png" alt="Vitale Medicine Logo" width="1034" height="739" decoding="async">
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Início</a></li>
@@ -38,14 +40,28 @@
                 <li><a href="#contato">Contato</a></li>
             </ul>
             <div class="nav-actions">
-                <div class="lang-switch">
-                    <a href="index.html" title="Español">ES</a> | <a href="pt.html" class="active" title="Português">PT</a>
+                <div class="lang-switch" role="group" aria-label="Seleção de idioma">
+                    <a href="index.html" title="Español">ES</a> | <a href="pt.html" class="active" title="Português" aria-current="page">PT</a>
                 </div>
                 <a href="https://wa.me/595985858524?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20na%20Vitale%20Medicine." class="nav-cta" target="_blank">Agendar Consulta</a>
+            </div>
+            <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <div class="mobile-menu" id="mobile-menu" hidden>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">A Clínica</a></li>
+                    <li><a href="#servicos">Especialidades</a></li>
+                    <li><a href="#equipe">Especialistas</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                <a href="https://wa.me/595985858524?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20na%20Vitale%20Medicine." class="nav-cta mobile-nav-cta" target="_blank">Agendar Consulta</a>
             </div>
         </div>
     </nav>
 
+    <main id="main-content" tabindex="-1">
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
@@ -71,16 +87,16 @@
             
             <div class="gallery-grid reveal">
                 <div class="gallery-item item-wide">
-                    <img src="vitale/fachada.webp" alt="Fachada Vitale Medicine">
+                    <img src="vitale/fachada.webp" alt="Fachada Vitale Medicine" width="680" height="510" loading="lazy" decoding="async">
                 </div>
                 <div class="gallery-item">
-                    <img src="vitale/sala de espera.webp" alt="Sala de Espera">
+                    <img src="vitale/sala de espera.webp" alt="Sala de Espera" width="382" height="510" loading="lazy" decoding="async">
                 </div>
                 <div class="gallery-item">
-                    <img src="vitale/recepcao2.webp" alt="Recepção">
+                    <img src="vitale/recepcao2.webp" alt="Recepção" width="382" height="510" loading="lazy" decoding="async">
                 </div>
                 <div class="gallery-item item-wide">
-                    <img src="vitale/procedimentos.webp" alt="Sala de Procedimentos">
+                    <img src="vitale/procedimentos.webp" alt="Sala de Procedimentos" width="382" height="510" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -96,32 +112,32 @@
 
             <div class="services-grid">
                 <div class="service-card reveal">
-                    <div class="service-icon"><i class="fas fa-dna"></i></div>
+                    <div class="service-icon"><i class="fas fa-dna" aria-hidden="true"></i></div>
                     <h3>Medicina Ortomolecular</h3>
                     <p>Equilíbrio celular e reposição de nutrientes essenciais para o funcionamento otimizado do corpo.</p>
                 </div>
                 <div class="service-card reveal">
-                    <div class="service-icon"><i class="fas fa-vial"></i></div>
+                    <div class="service-icon"><i class="fas fa-vial" aria-hidden="true"></i></div>
                     <h3>Modulação Hormonal</h3>
                     <p>Tratamentos personalizados para restaurar o vigor, energia e saúde metabólica em todas as etapas da vida.</p>
                 </div>
                 <div class="service-card reveal">
-                    <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19.89 10.75c.07.41.11.82.11 1.25c0 4.41-3.59 8-8 8s-8-3.59-8-8c0-.05.01-.1 0-.14c2.6-.98 4.69-2.99 5.74-5.55c3.38 4.14 7.97 3.73 8.99 3.61l-.89-1.93c-.13.01-4.62.38-7.18-3.86c1.01-.16 1.71-.15 2.59-.01c2.52-1.15 1.93-.89 2.76-1.26A9.6 9.6 0 0 0 12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10c0-1.43-.3-2.78-.84-4.01zM8.08 5.03a8.05 8.05 0 0 1-3.66 4.44a8.05 8.05 0 0 1 3.66-4.44"/><circle cx="15" cy="13" r="1.25" fill="currentColor"/><circle cx="9" cy="13" r="1.25" fill="currentColor"/><path fill="currentColor" d="m23 4.5l-2.4-1.1L19.5 1l-1.1 2.4L16 4.5l2.4 1.1L19.5 8l1.1-2.4z"/></svg></div>
+                    <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.89 10.75c.07.41.11.82.11 1.25c0 4.41-3.59 8-8 8s-8-3.59-8-8c0-.05.01-.1 0-.14c2.6-.98 4.69-2.99 5.74-5.55c3.38 4.14 7.97 3.73 8.99 3.61l-.89-1.93c-.13.01-4.62.38-7.18-3.86c1.01-.16 1.71-.15 2.59-.01c2.52-1.15 1.93-.89 2.76-1.26A9.6 9.6 0 0 0 12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10c0-1.43-.3-2.78-.84-4.01zM8.08 5.03a8.05 8.05 0 0 1-3.66 4.44a8.05 8.05 0 0 1 3.66-4.44"/><circle cx="15" cy="13" r="1.25" fill="currentColor"/><circle cx="9" cy="13" r="1.25" fill="currentColor"/><path fill="currentColor" d="m23 4.5l-2.4-1.1L19.5 1l-1.1 2.4L16 4.5l2.4 1.1L19.5 8l1.1-2.4z"/></svg></div>
                     <h3>Medicina Estética</h3>
                     <p>Tecnologias avançadas e procedimentos minimamente invasivos para realçar sua beleza natural.</p>
                 </div>
                 <div class="service-card reveal">
-                    <div class="service-icon"><i class="fas fa-weight-scale"></i></div>
+                    <div class="service-icon"><i class="fas fa-weight-scale" aria-hidden="true"></i></div>
                     <h3>Emagrecimento</h3>
                     <p>Programas médicos integrados (90 dias) com acompanhamento nutricional e metabólico de alto rendimento.</p>
                 </div>
                 <div class="service-card reveal">
-                    <div class="service-icon"><i class="fas fa-heart-pulse"></i></div>
+                    <div class="service-icon"><i class="fas fa-heart-pulse" aria-hidden="true"></i></div>
                     <h3>Medicina Regenerativa</h3>
                     <p>Foco na recuperação de tecidos e longevidade celular através de terapias biológicas inovadoras.</p>
                 </div>
                 <div class="service-card reveal">
-                    <div class="service-icon"><i class="fas fa-syringe"></i></div>
+                    <div class="service-icon"><i class="fas fa-syringe" aria-hidden="true"></i></div>
                     <h3>Terapia de Injetáveis</h3>
                     <p>Suplementação direta via soroterapia para resultados rápidos em imunidade e rendimento.</p>
                 </div>
@@ -141,46 +157,45 @@
                 <div class="team-card reveal">
                     <div class="team-img">
                         <a href="https://wa.me/595985858524?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Adrialdo%20Conrado." target="_blank">
-                            <img src="vitale/dr. Adho conrado.webp" alt="Dr. Adrialdo Conrado">
+                            <img src="vitale/dr. Adho conrado.webp" alt="Dr. Adrialdo Conrado" width="680" height="454" loading="lazy" decoding="async">
                         </a>
                     </div>
                     <div class="team-info">
                         <span>Fundador & Diretor</span>
                         <h3>Dr. Adrialdo Conrado</h3>
                         <p>Especialista em Medicina Ortomolecular, Terapia de Injetáveis e Modulação Hormonal.</p>
-                        <a href="https://wa.me/595985858524?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Adrialdo%20Conrado." target="_blank" class="team-cta">Agendar Consulta <i class="fas fa-chevron-right"></i></a>
+                        <a href="https://wa.me/595985858524?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Adrialdo%20Conrado." target="_blank" class="team-cta">Agendar Consulta <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
                 <div class="team-card reveal">
                     <div class="team-img">
                         <a href="https://wa.me/595985858524?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Norma%20Espinola." target="_blank">
-                            <img src="vitale/Norma Espinola.jpeg" alt="Dra. Norma Espinola">
+                            <img src="vitale/Norma Espinola.jpeg" alt="Dra. Norma Espinola" width="1298" height="1600" loading="lazy" decoding="async">
                         </a>
                     </div>
                     <div class="team-info">
                         <span>Diretora Médica</span>
                         <h3>Dra. Norma Espinola</h3>
                         <p>Especialista em Hormônios bioidênticos, Climatério e Menopausa, Ginecoestética e Trato Genital inferior.</p>
-                        <a href="https://wa.me/595985858524?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Norma%20Espinola." target="_blank" class="team-cta">Agendar Consulta <i class="fas fa-chevron-right"></i></a>
+                        <a href="https://wa.me/595985858524?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Norma%20Espinola." target="_blank" class="team-cta">Agendar Consulta <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
                 <div class="team-card reveal">
                     <div class="team-img">
                         <a href="https://wa.me/595985858524?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Izabely%20Carabajal." target="_blank">
-                            <img src="vitale/Izabely Carabajal.jpeg" alt="Dra. Izabely Carabajal" style="object-position: top;">
+                            <img src="vitale/Izabely Carabajal.jpeg" alt="Dra. Izabely Carabajal" width="1000" height="1600" loading="lazy" decoding="async" style="object-position: top;">
                         </a>
                     </div>
                     <div class="team-info">
                         <span>Harmonização Corporal e Facial</span>
                         <h3>Dra. Izabely Carabajal</h3>
                         <p>Médica-Cirurgiã especializada em harmonização Glútea, corporal e facial.</p>
-                        <a href="https://wa.me/595985858524?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Izabely%20Carabajal." target="_blank" class="team-cta">Agendar Consulta <i class="fas fa-chevron-right"></i></a>
+                        <a href="https://wa.me/595985858524?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Izabely%20Carabajal." target="_blank" class="team-cta">Agendar Consulta <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 
-            </div>
             </div>
 
             <!-- Equipe de Enfermagem -->
@@ -191,7 +206,7 @@
                 <div class="team-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 350px)); justify-content: center;">
                     <div class="team-card">
                         <div class="team-img" style="height: 350px;">
-                            <img src="vitale/Santacruz.jpeg" alt="Lic. Cristhian Santacruz" style="object-position: top;">
+                            <img src="vitale/Santacruz.jpeg" alt="Lic. Cristhian Santacruz" width="960" height="1280" loading="lazy" decoding="async" style="object-position: top;">
                         </div>
                         <div class="team-info">
                             <span>Licenciado em Enfermagem</span>
@@ -201,7 +216,7 @@
 
                     <div class="team-card">
                         <div class="team-img" style="height: 350px;">
-                            <img src="vitale/Nancy.jpeg" alt="Lic. Nancy Leonarda Villalba" style="object-position: top;">
+                            <img src="vitale/Nancy.jpeg" alt="Lic. Nancy Leonarda Villalba" width="680" height="810" loading="lazy" decoding="async" style="object-position: top;">
                         </div>
                         <div class="team-info">
                             <span>Licenciada em Enfermagem</span>
@@ -227,8 +242,8 @@
                     </div>
                     <div class="gmn-score-info">
                         <div class="gmn-score-number">5,0</div>
-                        <div class="gmn-stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <div class="gmn-stars" aria-label="5 de 5 estrelas">
+                        <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
                         </div>
                         <div class="gmn-text">4 AVALIAÇÕES NO GOOGLE</div>
                     </div>
@@ -237,8 +252,8 @@
 
             <div class="reviews-grid reveal">
                 <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <div class="review-stars" aria-label="5 de 5 estrelas">
+                        <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
                     </div>
                     <p class="review-text">"Excelente atendimento! Equipe super atenciosa e estrutura impecável."</p>
                     <div class="review-author">
@@ -251,8 +266,8 @@
                 </div>
 
                 <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <div class="review-stars" aria-label="5 de 5 estrelas">
+                        <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
                     </div>
                     <p class="review-text">"Ótimos profissionais e muito cuidado com a saúde integrativa do paciente."</p>
                     <div class="review-author">
@@ -265,8 +280,8 @@
                 </div>
 
                 <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <div class="review-stars" aria-label="5 de 5 estrelas">
+                        <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
                     </div>
                     <p class="review-text">"Recomendo a clínica para todos que buscam tratamentos de alta qualidade na região."</p>
                     <div class="review-author">
@@ -294,13 +309,14 @@
             <a href="https://wa.me/595985858524?text=Olá,%20gostaria%20de%20receber%20mais%20informações%20sobre%20os%20tratamentos%20da%20Vitale%20Medicine." class="btn-primary" style="background: var(--bg-white); color: var(--primary); font-size: 1.2rem; display: inline-block; padding: 1.2rem 2.5rem;" target="_blank">Falar com Atendimento</a>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="vitale/logo_final.png" alt="Vitale Logo">
+                    <img src="vitale/logo_final.png" alt="Vitale Logo" width="1034" height="739" loading="lazy" decoding="async">
                     <p>Policlínica & Medicina Integrativa. Excelência e inovação em saúde em Ciudad del Este.</p>
                 </div>
                 <div class="footer-links">
@@ -323,13 +339,13 @@
                 </div>
                 <div class="footer-links">
                     <h4>Contato</h4>
-                    <p style="margin-bottom: 1rem;"><a href="https://maps.app.goo.gl/9fSh8jvUTGKoyaDp8" target="_blank" style="color: rgba(255,255,255,0.6);"><i class="fas fa-location-dot" style="margin-right: 10px;"></i> Ciudad del Este, Paraguai</a></p>
-                    <p style="margin-bottom: 1rem;"><a href="https://maps.app.goo.gl/PgELHuCTtpFtmQd78" target="_blank" style="color: rgba(255,255,255,0.6);"><i class="fas fa-location-dot" style="margin-right: 10px;"></i> Santa Rita, Paraguai</a></p>
-                    <p style="margin-bottom: 1rem;"><a href="https://wa.me/595985858524?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" style="color: rgba(255,255,255,0.6);"><i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp Ciudad del Este</a></p>
-                    <p style="margin-bottom: 1rem;"><a href="https://wa.me/595985700272?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" style="color: rgba(255,255,255,0.6);"><i class="fab fa-whatsapp" style="margin-right: 10px;"></i> WhatsApp Santa Rita</a></p>
+                    <p style="margin-bottom: 1rem;"><a href="https://maps.app.goo.gl/9fSh8jvUTGKoyaDp8" target="_blank" style="color: rgba(255,255,255,0.6);"><i class="fas fa-location-dot" style="margin-right: 10px;" aria-hidden="true"></i> Ciudad del Este, Paraguai</a></p>
+                    <p style="margin-bottom: 1rem;"><a href="https://maps.app.goo.gl/PgELHuCTtpFtmQd78" target="_blank" style="color: rgba(255,255,255,0.6);"><i class="fas fa-location-dot" style="margin-right: 10px;" aria-hidden="true"></i> Santa Rita, Paraguai</a></p>
+                    <p style="margin-bottom: 1rem;"><a href="https://wa.me/595985858524?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" style="color: rgba(255,255,255,0.6);"><i class="fab fa-whatsapp" style="margin-right: 10px;" aria-hidden="true"></i> WhatsApp Ciudad del Este</a></p>
+                    <p style="margin-bottom: 1rem;"><a href="https://wa.me/595985700272?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" style="color: rgba(255,255,255,0.6);"><i class="fab fa-whatsapp" style="margin-right: 10px;" aria-hidden="true"></i> WhatsApp Santa Rita</a></p>
                     <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-                        <a href="https://www.instagram.com/vitale.medicine/" target="_blank" style="font-size: 1.5rem; color: rgba(255,255,255,0.6);"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/vitale.cde/" target="_blank" style="font-size: 1.5rem; color: rgba(255,255,255,0.6);"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/vitale.medicine/" target="_blank" style="font-size: 1.5rem; color: rgba(255,255,255,0.6);" aria-label="Instagram da Vitale Medicine"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.facebook.com/vitale.cde/" target="_blank" style="font-size: 1.5rem; color: rgba(255,255,255,0.6);" aria-label="Facebook da Vitale Medicine"><i class="fab fa-facebook" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
