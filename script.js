@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     // Navbar Scroll Effect
     const nav = document.getElementById('main-nav');
@@ -50,26 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Reveal Animations on Scroll with a no-JS/unsupported fallback
-    const reveals = document.querySelectorAll('.reveal');
-
-    if ('IntersectionObserver' in window && !prefersReducedMotion) {
-        document.documentElement.classList.add('reveal-enabled');
-
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        reveals.forEach(reveal => {
-            revealObserver.observe(reveal);
-        });
+    // The primary contact remains available while its floating duplicate recedes.
+    const floatingContact = document.querySelector('.whatsapp-float');
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(entries => {
+            floatingContact.classList.toggle('contact-visible', entries[0].isIntersecting);
+        }).observe(document.getElementById('contato'));
     }
 
     // Smooth Scrolling for anchor links
@@ -81,24 +67,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 ? document.getElementById('home')
                 : document.querySelector(selector);
             if (target) {
-                const headerOffset = 80;
+                const headerOffset = nav.getBoundingClientRect().height + 16;
                 const elementPosition = target.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
                 window.scrollTo({
                     top: offsetPosition,
-                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                    behavior: motionPreference.matches ? 'auto' : 'smooth'
                 });
+                target.setAttribute('tabindex', '-1');
+                target.focus({ preventScroll: true });
             }
         });
     });
-
-    // Stagger animation for services
-    if (!prefersReducedMotion) {
-        const services = document.querySelectorAll('.service-card');
-        services.forEach((service, index) => {
-            service.style.transitionDelay = `${index * 0.1}s`;
-        });
-    }
 
 });
