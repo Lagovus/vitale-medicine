@@ -3,13 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar Scroll Effect
     const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
+    const updateNav = () => {
         if (window.scrollY > 50) {
             nav.classList.add('scrolled');
         } else {
             nav.classList.remove('scrolled');
         }
-    });
+    };
+    updateNav();
+    window.addEventListener('scroll', updateNav, { passive: true });
 
     // Accessible Mobile Navigation
     const menuToggle = document.querySelector('.mobile-menu-toggle');
@@ -60,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
                 }
             });
         }, {
@@ -69,36 +72,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
         reveals.forEach(reveal => {
             revealObserver.observe(reveal);
+            reveal.addEventListener('focusin', () => {
+                reveal.classList.add('reveal-immediate', 'active');
+                revealObserver.unobserve(reveal);
+            }, { once: true });
         });
     }
 
     // Smooth Scrolling for anchor links
     document.querySelectorAll('a[href^="#"]:not(.skip-link)').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+        anchor.addEventListener('click', function (event) {
+            event.preventDefault();
             const selector = this.getAttribute('href');
             const target = selector === '#'
                 ? document.getElementById('home')
                 : document.querySelector(selector);
             if (target) {
-                const headerOffset = 80;
+                const headerOffset = nav.getBoundingClientRect().height + 16;
                 const elementPosition = target.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
+                if (!target.hasAttribute('tabindex')) {
+                    target.setAttribute('tabindex', '-1');
+                }
+                target.focus({ preventScroll: true });
+
                 window.scrollTo({
                     top: offsetPosition,
-                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                    behavior: prefersReducedMotion || event.detail === 0 ? 'auto' : 'smooth'
                 });
             }
         });
     });
 
-    // Stagger animation for services
-    if (!prefersReducedMotion) {
-        const services = document.querySelectorAll('.service-card');
-        services.forEach((service, index) => {
-            service.style.transitionDelay = `${index * 0.1}s`;
-        });
-    }
+    // Avoid duplicating the final WhatsApp action while its CTA is visible.
+    const whatsappFloat = document.querySelector('.whatsapp-float');
+    const contactSection = document.getElementById('contato');
+    if ('IntersectionObserver' in window && whatsappFloat && contactSection) {
+        const contactObserver = new IntersectionObserver(([entry]) => {
+            whatsappFloat.classList.toggle('is-suppressed', entry.isIntersecting);
+        }, { threshold: 0.15 });
 
+        contactObserver.observe(contactSection);
+    }
 });
