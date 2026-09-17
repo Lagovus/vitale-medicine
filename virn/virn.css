@@ -13,7 +13,7 @@
     --font-display: "Playfair Display", Georgia, serif;
     --font-ui: "Inter", Arial, sans-serif;
     --container: 1280px;
-    --header-height: 92px;
+    --header-height: 128px;
     --focus: #22d3c5;
     --ease: cubic-bezier(0.2, 0, 0, 1);
 }
@@ -129,16 +129,16 @@ button,
 
 .virn-brand__logo-frame {
     display: block;
-    flex: 0 0 250px;
-    width: 250px;
-    height: 66px;
-    overflow: hidden;
+    flex: 0 0 156px;
+    width: 156px;
+    height: 117px;
 }
 
 .virn-brand__logo-frame img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: contain;
 }
 
 .desktop-nav {
@@ -1673,7 +1673,13 @@ button,
 
 @media (max-width: 1100px) {
     :root {
-        --header-height: 82px;
+        --header-height: 104px;
+    }
+
+    .virn-brand__logo-frame {
+        flex-basis: 124px;
+        width: 124px;
+        height: 93px;
     }
 
     .site-header__inner {
@@ -2342,16 +2348,16 @@ button,
     }
 
     .virn-brand__logo-frame {
-        flex-basis: 190px;
-        width: 190px;
-        height: 50px;
+        flex-basis: 116px;
+        width: 116px;
+        height: 87px;
     }
 
 }
 
 @media (max-width: 520px) {
     :root {
-        --header-height: 78px;
+        --header-height: 96px;
     }
 
     .site-header__inner {
