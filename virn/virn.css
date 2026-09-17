@@ -973,8 +973,7 @@ button,
     text-transform: uppercase;
 }
 
-.speaker-featured h3,
-.speaker-secondary h3 {
+.speaker-featured h3 {
     margin: 14px 0 0;
     color: var(--virn-navy);
     font-family: var(--font-display);
@@ -1073,41 +1072,22 @@ button,
     border-top: 1px solid var(--virn-border);
 }
 
-.speaker-secondary {
-    display: grid;
-    grid-template-columns: 88px minmax(0, 1fr);
-    gap: 28px;
-    align-items: start;
-    padding: 16px 0 0;
+.speaker-featured--adrialdo {
+    margin-top: 0;
+    padding-top: 32px;
+    border-top: 0;
 }
 
-.speaker-secondary__number {
-    color: rgba(8, 16, 40, 0.16);
-    font-family: var(--font-display);
-    font-size: 3.25rem;
-    font-weight: 600;
-    line-height: 1;
+.speaker-featured--adrialdo .speaker-featured__visual img {
+    object-position: left 20%;
+    transform: scale(1.18);
+    transform-origin: 35% 25%;
 }
 
-.speaker-secondary h3 {
-    margin-top: 6px;
-    font-size: clamp(1.65rem, 2.4vw, 2.2rem);
-}
-
-.speaker-secondary__role {
-    margin: 8px 0 0;
-    color: #0d687a;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-.speaker-secondary__status {
-    margin: 8px 0 0;
-    color: var(--virn-muted);
-    font-size: 0.88rem;
-    line-height: 1.6;
+.speaker-featured--adrialdo .speaker-detail-group + .speaker-detail-group {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--virn-border);
 }
 
 .virn-institution {
@@ -2132,16 +2112,6 @@ button,
 
     .speaker-focus-list {
         grid-template-columns: minmax(0, 1fr);
-    }
-
-    .speaker-secondary {
-        grid-template-columns: 52px minmax(0, 1fr);
-        gap: 18px;
-        padding-top: 16px;
-    }
-
-    .speaker-secondary__number {
-        font-size: 2.5rem;
     }
 
     .program-faq {
