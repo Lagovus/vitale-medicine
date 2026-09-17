@@ -109,15 +109,50 @@
 
     if (!floatingWhatsApp) return;
 
+    const facultyZone = document.querySelector(".program-faculty");
     const overlapZones = document.querySelectorAll(
-        ".registration-help, .program-faq, .final-cta, .site-footer"
+        ".registration-help, .program-faq, .final-cta, .site-footer, .program-faculty, .virn-institution__affiliations"
     );
     const visibleZones = new Set();
+    const occlusionTargets = document.querySelectorAll("main img, main video, main .button, main summary");
+    const contentRanges = [];
+    const textWalker = document.createTreeWalker(document.querySelector("main"), NodeFilter.SHOW_TEXT);
+
+    while (textWalker.nextNode()) {
+        const node = textWalker.currentNode;
+        if (!node.textContent.trim() || node.parentElement.closest("[hidden], [aria-hidden='true']")) continue;
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        contentRanges.push(range);
+    }
 
     if (!overlapZones.length) return;
 
+    const overlapsMobileContent = () => {
+        if (window.innerWidth > 430) return false;
+
+        const style = window.getComputedStyle(floatingWhatsApp);
+        const right = document.documentElement.clientWidth - parseFloat(style.right);
+        const bottom = window.innerHeight - parseFloat(style.bottom);
+        const left = right - floatingWhatsApp.offsetWidth;
+        const top = bottom - floatingWhatsApp.offsetHeight;
+
+        const intersects = (rect) => rect.width > 0 && rect.height > 0 &&
+            rect.left < right && rect.right > left && rect.top < bottom && rect.bottom > top;
+
+        if ([...occlusionTargets].some((target) => intersects(target.getBoundingClientRect()))) {
+            return true;
+        }
+
+        return contentRanges.some((range) => [...range.getClientRects()].some(intersects));
+    };
+
     const updateFloatingWhatsApp = () => {
-        const shouldHide = visibleZones.size > 0 && document.activeElement !== floatingWhatsApp;
+        const contextualZoneVisible = [...visibleZones].some(
+            (zone) => zone !== facultyZone || window.innerWidth <= 430
+        );
+        const shouldHide = (contextualZoneVisible || overlapsMobileContent()) &&
+            document.activeElement !== floatingWhatsApp;
 
         floatingWhatsApp.classList.toggle("is-contextual-cta-visible", shouldHide);
         floatingWhatsApp.setAttribute("aria-hidden", String(shouldHide));
@@ -135,10 +170,11 @@
                 });
                 updateFloatingWhatsApp();
             },
-            { threshold: 0, rootMargin: "-8% 0px -8% 0px" }
+            { threshold: 0, rootMargin: "-8% 0px 0px 0px" }
         );
 
         overlapZones.forEach((zone) => observer.observe(zone));
+        window.addEventListener("resize", updateFloatingWhatsApp);
     } else {
         let frameRequested = false;
 
@@ -148,7 +184,7 @@
             visibleZones.clear();
             overlapZones.forEach((zone) => {
                 const rect = zone.getBoundingClientRect();
-                if (rect.bottom > viewportInset && rect.top < window.innerHeight - viewportInset) {
+                if (rect.bottom > viewportInset && rect.top < window.innerHeight) {
                     visibleZones.add(zone);
                 }
             });
@@ -166,6 +202,19 @@
         window.addEventListener("resize", requestZoneCheck);
         requestZoneCheck();
     }
+
+    let occlusionFrameRequested = false;
+    const requestOcclusionUpdate = () => {
+        if (occlusionFrameRequested) return;
+        occlusionFrameRequested = true;
+        window.requestAnimationFrame(() => {
+            updateFloatingWhatsApp();
+            occlusionFrameRequested = false;
+        });
+    };
+
+    window.addEventListener("scroll", requestOcclusionUpdate, { passive: true });
+    requestOcclusionUpdate();
 
     floatingWhatsApp.addEventListener("blur", updateFloatingWhatsApp);
 })();

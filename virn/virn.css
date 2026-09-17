@@ -141,26 +141,6 @@ button,
     height: auto;
 }
 
-.virn-brand__relation {
-    display: block;
-    max-width: 182px;
-    margin: 0;
-    padding-left: 13px;
-    border-left: 1px solid var(--virn-border);
-    color: var(--virn-muted);
-    font-size: 0.6875rem;
-    line-height: 1.3;
-}
-
-.virn-brand__relation a {
-    color: var(--virn-ink);
-    font-weight: 700;
-    text-decoration: underline;
-    text-decoration-color: var(--vitale-green);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 2px;
-}
-
 .desktop-nav {
     display: flex;
     align-items: center;
@@ -1074,7 +1054,7 @@ button,
 
 .speaker-featured--adrialdo {
     margin-top: 0;
-    padding-top: 32px;
+    padding-top: 24px;
     border-top: 0;
 }
 
@@ -1145,8 +1125,8 @@ button,
 
 .virn-institution__pillars {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin: clamp(60px, 7vw, 88px) 0 0;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: clamp(44px, 5vw, 64px) 0 0;
     padding: 0;
     border-block: 1px solid rgba(216, 225, 230, 0.2);
     list-style: none;
@@ -1154,20 +1134,15 @@ button,
 
 .virn-institution__pillars li {
     display: grid;
-    grid-template-columns: 34px minmax(0, 1fr);
-    gap: 14px;
+    grid-template-columns: 26px minmax(0, 1fr);
+    gap: 12px;
     align-items: center;
-    min-height: 96px;
-    padding: 22px 28px;
+    min-height: 88px;
+    padding: 18px 20px;
 }
 
-.virn-institution__pillars li:nth-child(3n + 2),
-.virn-institution__pillars li:nth-child(3n + 3) {
+.virn-institution__pillars li + li {
     border-left: 1px solid rgba(216, 225, 230, 0.2);
-}
-
-.virn-institution__pillars li:nth-child(n + 4) {
-    border-top: 1px solid rgba(216, 225, 230, 0.2);
 }
 
 .virn-institution__pillars span {
@@ -1183,6 +1158,47 @@ button,
     font-size: 0.9rem;
     font-weight: 600;
     line-height: 1.45;
+}
+
+.virn-institution__affiliations {
+    display: grid;
+    grid-template-columns: minmax(150px, 0.25fr) minmax(0, 1fr);
+    gap: 28px;
+    align-items: center;
+    margin-top: clamp(36px, 4vw, 48px);
+    padding-top: clamp(24px, 3vw, 32px);
+    border-top: 1px solid rgba(216, 225, 230, 0.2);
+}
+
+.virn-institution__affiliations p {
+    margin: 0;
+    color: #dbe5e8;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.virn-institution__logos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    min-width: 0;
+    padding: 8px 18px;
+    background: var(--virn-light);
+}
+
+.virn-institution__logos img {
+    display: block;
+    width: min(100%, 280px);
+    height: 72px;
+    margin-inline: auto;
+    object-fit: contain;
+}
+
+.virn-institution__logos img + img {
+    border-left: 1px solid var(--virn-border);
 }
 
 .program-certification {
@@ -1964,9 +1980,7 @@ button,
     }
 
     .virn-institution__pillars li,
-    .virn-institution__pillars li:nth-child(3n + 2),
-    .virn-institution__pillars li:nth-child(3n + 3),
-    .virn-institution__pillars li:nth-child(n + 4) {
+    .virn-institution__pillars li + li {
         border-top: 1px solid rgba(216, 225, 230, 0.2);
         border-left: 0;
     }
@@ -1977,6 +1991,11 @@ button,
 
     .virn-institution__pillars li:nth-child(even) {
         border-left: 1px solid rgba(216, 225, 230, 0.2);
+    }
+
+    .virn-institution__affiliations {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
     }
 
     .certification-layout {
@@ -2101,6 +2120,23 @@ button,
         width: min(100%, 460px);
     }
 
+    .speaker-featured--carolina .speaker-featured__visual {
+        aspect-ratio: 3 / 4;
+    }
+
+    .speaker-featured--carolina .speaker-featured__visual img {
+        object-position: center top;
+    }
+
+    .speaker-featured--adrialdo {
+        margin-top: 24px;
+        padding-top: 20px;
+    }
+
+    .speaker-featured--adrialdo .speaker-featured__visual {
+        aspect-ratio: 3 / 4;
+    }
+
     .speaker-featured__content {
         padding-top: 0;
     }
@@ -2155,6 +2191,22 @@ button,
 
     .virn-institution__pillars li:first-child {
         border-top: 0;
+    }
+
+    .virn-institution__logos {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+        padding: 8px 16px;
+    }
+
+    .virn-institution__logos img {
+        width: min(100%, 250px);
+        height: 68px;
+    }
+
+    .virn-institution__logos img + img {
+        border-top: 1px solid var(--virn-border);
+        border-left: 0;
     }
 
     .certification-layout {
@@ -2295,9 +2347,6 @@ button,
         height: 50px;
     }
 
-    .virn-brand__relation {
-        display: none;
-    }
 }
 
 @media (max-width: 520px) {
