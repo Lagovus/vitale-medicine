@@ -1,0 +1,20 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/virn",
+      "destination": "https://virninternacional.com.py/",
+      "statusCode": 301
+    },
+    {
+      "source": "/virn/",
+      "destination": "https://virninternacional.com.py/",
+      "statusCode": 301
+    },
+    {
+      "source": "/virn/:path*",
+      "destination": "https://virninternacional.com.py/:path*",
+      "statusCode": 301
+    }
+  ]
+}
