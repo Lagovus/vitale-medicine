@@ -788,6 +788,50 @@ footer {
     color: var(--text-light);
 }
 
+/* Live Google reviews: retain the existing card and typography system. */
+#reviews [hidden] { display: none; }
+#reviews .gmn-score-card {
+    max-width: 100%;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+#reviews .google-maps-attribution {
+    width: auto;
+    height: 18px;
+    flex-shrink: 0;
+    margin: 10px 10px 5px;
+}
+#reviews .gmn-score-info { min-width: 0; }
+#reviews .reviews-grid { margin-top: 2rem; }
+#reviews .review-card { min-width: 0; }
+#reviews .review-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+#reviews .review-author > a { flex-shrink: 0; }
+#reviews .author-avatar { object-fit: cover; }
+#reviews .author-info { min-width: 0; overflow-wrap: anywhere; }
+#reviews .author-info h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    margin-bottom: 0.1rem;
+}
+#reviews .author-info time { font-size: 0.8rem; color: var(--text-light); }
+#reviews .reviews-status,
+#reviews .reviews-details,
+#reviews .reviews-attribution { color: var(--text-light); font-size: 0.875rem; }
+#reviews .review-source { display: inline-block; margin-top: 1rem; font-size: 0.85rem; }
+#reviews .reviews-details { margin-top: 1.5rem; }
+#reviews .reviews-attribution { display: flex; flex-wrap: wrap; gap: 1rem; }
+#reviews .reviews-actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    text-align: center;
+}
+#reviews a:not(.gmn-score-card) { text-decoration: underline; text-underline-offset: 3px; }
+#reviews .reviews-actions a { font-weight: 600; color: var(--text-dark); }
+#reviews a:focus-visible { outline-color: var(--text-dark); }
+
 /* Responsive */
 @media (max-width: 1100px) {
     .hero h1 { font-size: 3rem; }

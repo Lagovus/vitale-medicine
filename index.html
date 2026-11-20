@@ -229,74 +229,33 @@
         </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section id="reviews" class="reviews" style="background-color: var(--bg-light);">
+    <!-- Reviews Section: no static rating or testimonial fallback -->
+    <section id="reviews" class="reviews" aria-labelledby="reviews-title" style="background-color: var(--bg-light);">
         <div class="container">
             <div class="reviews-header-container reveal">
                 <div class="reviews-title-area">
                     <span class="reviews-tagline">— LO QUE DICEN NUESTROS PACIENTES</span>
-                    <h2>Historias reales, <span>resultados reales.</span></h2>
+                    <h2 id="reviews-title">Historias reales, <span>resultados reales.</span></h2>
                 </div>
-                <a href="https://www.google.com/search?sca_esv=33295543d8b8cd1e&sxsrf=ANbL-n5KFuhDO7dCr-gyR2C6js0a-xaOXQ:1776961160508&kgmid=/g/11tnt2vb81&q=VITALE+MEDICINE+INTEGRATIVE+POLICL%C3%8DNICA&shem=dlvs1,epsd1&shndl=30&source=sh/x/loc/uni/m1/1&kgs=5053ca33d8c32abd&utm_source=dlvs1,epsd1,sh/x/loc/uni/m1/1#lrd=0x94f6853256cb9a8f:0xfe8d04796a97cdee,3,,,," target="_blank" class="gmn-score-card">
-                    <div class="gmn-logo">
-                        <div class="gmn-logo-inner">G</div>
-                    </div>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Vitale%20Medicine&amp;query_place_id=ChIJj5rLVjKF9pQR7s2XankEjf4" target="_blank" rel="noopener noreferrer" class="gmn-score-card">
+                    <img class="google-maps-attribution" src="vitale/attribution/google-maps.svg" alt="Google Maps" width="98" height="18" translate="no">
                     <div class="gmn-score-info">
-                        <div class="gmn-score-number">5,0</div>
-                    <div class="gmn-stars" aria-label="5 de 5 estrellas">
-                        <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
-                        </div>
-                        <div class="gmn-text">4 EVALUACIONES EN GOOGLE</div>
+                        <div class="gmn-score-number" hidden></div>
+                        <div class="gmn-stars" hidden></div>
+                        <div class="gmn-text">Ver opiniones en Google</div>
                     </div>
                 </a>
             </div>
-
-            <div class="reviews-grid reveal">
-                <div class="review-card">
-                    <div class="review-stars" aria-label="5 de 5 estrellas">
-                        <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
-                    </div>
-                    <p class="review-text">"¡Excelente atención! Equipo muy atento y estructura impecable."</p>
-                    <div class="review-author">
-                        <div class="author-avatar">M</div>
-                        <div class="author-info">
-                            <h4>malu</h4>
-                            <span>Local Guide</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-stars" aria-label="5 de 5 estrellas">
-                        <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
-                    </div>
-                    <p class="review-text">"Excelentes profesionales y mucho cuidado con la salud integrativa del paciente."</p>
-                    <div class="review-author">
-                        <div class="author-avatar">JG</div>
-                        <div class="author-info">
-                            <h4>Jorge Ariel Amarilla Gonzalez</h4>
-                            <span>Local Guide</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-stars" aria-label="5 de 5 estrellas">
-                        <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
-                    </div>
-                    <p class="review-text">"Recomiendo la clínica para todos los que buscan tratamientos de alta calidad en la región."</p>
-                    <div class="review-author">
-                        <div class="author-avatar">OF</div>
-                        <div class="author-info">
-                            <h4>Obede R Ferreira</h4>
-                            <span>Local Guide</span>
-                        </div>
-                    </div>
-                </div>
+            <p class="reviews-status" role="status">Consultá las opiniones y la calificación actual directamente en Google Maps.</p>
+            <div class="reviews-grid" hidden></div>
+            <div class="reviews-attribution"></div>
+            <div class="reviews-details" hidden>
+                <p><a href="https://support.google.com/contributionpolicy/answer/7400114" target="_blank" rel="noopener noreferrer">Política de opiniones de Google</a></p>
+                <p><a data-reviews-terms>Términos de uso</a> · <a data-reviews-privacy>Privacidad</a></p>
             </div>
-            
-            <div style="text-align: center; margin-top: 3rem;" class="reveal">
-                <a href="https://www.google.com/search?sca_esv=33295543d8b8cd1e&sxsrf=ANbL-n5KFuhDO7dCr-gyR2C6js0a-xaOXQ:1776961160508&kgmid=/g/11tnt2vb81&q=VITALE+MEDICINE+INTEGRATIVE+POLICL%C3%8DNICA&shem=dlvs1,epsd1&shndl=30&source=sh/x/loc/uni/m1/1&kgs=5053ca33d8c32abd&utm_source=dlvs1,epsd1,sh/x/loc/uni/m1/1#lrd=0x94f6853256cb9a8f:0xfe8d04796a97cdee,3,,,," target="_blank" style="color: var(--primary); text-decoration: underline; font-weight: 600; font-size: 1.1rem;">Calificá tu experiencia aquí en la clínica</a>
+            <div class="reviews-actions">
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Vitale%20Medicine&amp;query_place_id=ChIJj5rLVjKF9pQR7s2XankEjf4" target="_blank" rel="noopener noreferrer" data-all-reviews>Ver todas las opiniones en Google</a>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Vitale%20Medicine&amp;query_place_id=ChIJj5rLVjKF9pQR7s2XankEjf4" target="_blank" rel="noopener noreferrer" data-write-review>Calificá tu experiencia aquí en la clínica</a>
             </div>
         </div>
     </section>
@@ -359,5 +318,6 @@
 
     <!-- Scripts -->
     <script src="script.js"></script>
+    <script src="reviews.js" defer></script>
 </body>
 </html>
